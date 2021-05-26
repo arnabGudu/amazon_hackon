@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version='1.7'>
+  <model name='stairs'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0 3.1835 6.0936 0 -0 0</pose>
+        <mass>926.96</mass>
+        <inertia>
+          <ixx>292.21</ixx>
+          <ixy>5.0582e-07</ixy>
+          <ixz>-4.5563e-06</ixz>
+          <iyy>502.2</iyy>
+          <iyz>-91.997</iyz>
+          <izz>339.28</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stairs/meshes/collision.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stairs/meshes/visual.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

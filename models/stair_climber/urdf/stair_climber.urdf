@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="stair_climber">
+  <gazebo reference="base_link">
+    <material>Gazebo/DarkGray</material>
+  </gazebo>
+  <gazebo reference="lifter_base">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <gazebo reference="lifter">
+    <material>Gazebo/LightGray</material>
+  </gazebo>
+  <gazebo reference="front_left_large_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="front_right_large_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="front_left_small_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="front_right_small_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="rear_left_small_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="rear_right_small_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.29928 -2.6383E-08 0.087595" rpy="0 0 0" />
+      <mass value="0.22457" />
+      <inertia ixx="0.00043675" ixy="-1.7875E-10" ixz="-1.6661E-05" iyy="0.00014803" iyz="1.1703E-09" izz="0.00051388" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_large_wheel">
+    <inertial>
+      <origin xyz="-8.3267E-17 -6.7342E-07 -5.5511E-17" rpy="0 0 0" />
+      <mass value="0.78039" />
+      <inertia ixx="0.0017349" ixy="-2.7297E-19" ixz="-1.339E-20" iyy="0.0028684" iyz="4.6049E-19" izz="0.0017349" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_left_large_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_left_large_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="front_left_large_wheel_joint" type="continuous">
+    <origin xyz="0.30118 0.255 0.0844" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="front_left_large_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="front_right_large_wheel">
+    <inertial>
+      <origin xyz="0 -6.7342E-07 -2.7756E-17" rpy="0 0 0" />
+      <mass value="0.78039" />
+      <inertia ixx="0.0017349" ixy="5.4823E-19" ixz="-1.613E-20" iyy="0.0028684" iyz="-5.7522E-19" izz="0.0017349" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_right_large_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_right_large_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="front_right_large_wheel_joint" type="continuous">
+    <origin xyz="0.30118 -0.255 0.0844" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="front_right_large_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="front_left_small_wheel">
+    <inertial>
+      <origin xyz="-3.8858E-16 -3.8217E-07 4.7184E-16" rpy="0 0 0" />
+      <mass value="0.31269" />
+      <inertia ixx="0.0003624" ixy="-2.8909E-20" ixz="9.015E-21" iyy="0.00050138" iyz="1.2006E-19" izz="0.0003624" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_left_small_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_left_small_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="front_left_small_wheel_joint" type="continuous">
+    <origin xyz="0.18654 0.255 -0.0656" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="front_left_small_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="front_right_small_wheel">
+    <inertial>
+      <origin xyz="0 -3.8217E-07 -3.4694E-18" rpy="0 0 0" />
+      <mass value="0.31269" />
+      <inertia ixx="0.0003624" ixy="7.0996E-20" ixz="9.9779E-21" iyy="0.00050138" iyz="4.582E-21" izz="0.0003624" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_right_small_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_right_small_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="front_right_small_wheel_joint" type="continuous">
+    <origin xyz="0.18654 -0.255 -0.0656" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="front_right_small_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rear_left_small_wheel">
+    <inertial>
+      <origin xyz="-4.996E-16 -3.8217E-07 4.7878E-16" rpy="0 0 0" />
+      <mass value="0.31269" />
+      <inertia ixx="0.0003624" ixy="-5.2962E-20" ixz="9.9779E-21" iyy="0.00050138" iyz="5.0804E-20" izz="0.0003624" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/rear_left_small_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/rear_left_small_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rear_left_small_wheel_joint" type="continuous">
+    <origin xyz="-0.36346 0.255 -0.0656" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rear_left_small_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rear_right_small_wheel">
+    <inertial>
+      <origin xyz="-5.5511E-17 -3.8217E-07 0" rpy="0 0 0" />
+      <mass value="0.31269" />
+      <inertia ixx="0.0003624" ixy="5.2766E-20" ixz="8.4875E-21" iyy="0.00050138" iyz="3.9357E-21" izz="0.0003624" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/rear_right_small_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/rear_right_small_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rear_right_small_wheel_joint" type="continuous">
+    <origin xyz="-0.36346 -0.255 -0.0656" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rear_right_small_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="lifter_base">
+    <inertial>
+      <origin xyz="-0.17875 0.0077953 0.23116" rpy="0 0 0" />
+      <mass value="2.9505" />
+      <inertia ixx="0.022818" ixy="4.8744E-19" ixz="-2.4381E-19" iyy="0.085398" iyz="-0.001011" izz="0.063079" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter_base.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lifter_base_joint" type="fixed">
+    <origin xyz="0.14057 0.17875 -0.026998" rpy="-1.5708 0 1.5708" />
+    <parent link="base_link" />
+    <child link="lifter_base" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="rear_proximity">
+    <inertial>
+      <origin xyz="0.0062452 3.2017E-05 -0.0014786" rpy="0 0 0" />
+      <mass value="0.027653" />
+      <inertia ixx="2.3096E-05" ixy="7.8475E-12" ixz="-1.1478E-08" iyy="8.4763E-07" iyz="6.099E-09" izz="2.2578E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/rear_proximity.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/rear_proximity.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rear_proximity_joint" type="fixed">
+    <origin xyz="-0.17875 0.0096015 0.48894" rpy="0 0 1.5708" />
+    <parent link="lifter_base" />
+    <child link="rear_proximity" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="lifter_base_imu">
+    <inertial>
+      <origin xyz="0.00031574 0.0023809 0.0025315" rpy="0 0 0" />
+      <mass value="0.0076507" />
+      <inertia ixx="6.2819E-07" ixy="1.9039E-09" ixz="-2.2873E-08" iyy="1.0276E-06" iyz="1.2547E-08" izz="4.4643E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter_base_imu.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter_base_imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lifter_base_imu_joint" type="fixed">
+    <origin xyz="-0.17875 0.0066015 0.01823" rpy="0 0 3.1416" />
+    <parent link="lifter_base" />
+    <child link="lifter_base_imu" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="lifter">
+    <inertial>
+      <origin xyz="-0.23492 -2.1915E-09 -0.0011098" rpy="0 0 0" />
+      <mass value="1.2527" />
+      <inertia ixx="0.019426" ixy="4.789E-10" ixz="-4.4821E-05" iyy="0.0305" iyz="2.0862E-11" izz="0.049823" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lifter_joint" type="continuous">
+    <origin xyz="-0.17875 -0.043898 0.064012" rpy="0 1.5673 -1.5708" />
+    <parent link="lifter_base" />
+    <child link="lifter" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="lifter_imu">
+    <inertial>
+      <origin xyz="-0.017684 0.0043809 0.036435" rpy="0 0 0" />
+      <mass value="0.0076507" />
+      <inertia ixx="6.2819E-07" ixy="1.9039E-09" ixz="-2.2873E-08" iyy="1.0276E-06" iyz="1.2547E-08" izz="4.4643E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter_imu.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/lifter_imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lifter_imu_joint" type="fixed">
+    <origin xyz="7.1068E-05 -0.018 0" rpy="1.5708 0 -1.5708" />
+    <parent link="lifter" />
+    <child link="lifter_imu" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="front_proximity">
+    <inertial>
+      <origin xyz="0.0062452 3.2017E-05 -0.0014786" rpy="0 0 0" />
+      <mass value="0.027653" />
+      <inertia ixx="2.3096E-05" ixy="7.8475E-12" ixz="-1.1478E-08" iyy="8.4763E-07" iyz="6.099E-09" izz="2.2578E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_proximity.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/front_proximity.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="front_proximity_joint" type="fixed">
+    <origin xyz="0.35767 0 0.09975" rpy="0 1.5708 0" />
+    <parent link="base_link" />
+    <child link="front_proximity" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="kinect_rod">
+    <inertial>
+      <origin xyz="2.945E-06 2.8388E-06 2.5103E-16" rpy="0 0 0" />
+      <mass value="0.002763" />
+      <inertia ixx="1.4164E-06" ixy="2.5328E-22" ixz="5.0848E-23" iyy="7.0291E-08" iyz="-2.9899E-23" izz="1.4183E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/kinect_rod.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77255 0.75294 0.73333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://stair_climber/meshes/kinect_rod.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="kinect_rod_joint" type="fixed">
+    <origin xyz="0.32265 0 0.19023" rpy="1.5708 0 0" />
+    <parent link="base_link" />
+    <child link="kinect_rod" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>
