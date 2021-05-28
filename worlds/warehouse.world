@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://stairs</uri>
+      <name>stairs</name>
+      <pose>0 2.0 0 0 0 -1.570796</pose>
+    </include>
+
+    <include>
+      <uri>model://stair_climber</uri>
+      <name>stair_climber</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <model name="room">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="front_wall">
+        <collision name="front_wall_collision">
+          <pose>-10 0 3.5 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.25 20 7</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="front_wall_visual">
+          <cast_shadows>false</cast_shadows>
+          <pose>-10 0 3.5 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.25 20 7</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Gray</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <link name="top_floor">
+        <collision name="top_floor_collision">
+        	<pose>0 6.5 3.5 0 -1.570796 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.25 20 7</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="top_floor_visual">
+          <cast_shadows>false</cast_shadows>
+          <pose>0 6.5 3.5 0 -1.570796 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.25 20 7</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Gray</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name="top_floor_stairs_collision">
+        	<pose>-8.5 2 3.5 0 -1.570796 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.25 3 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="top_floor_stairs_visual">
+          <cast_shadows>false</cast_shadows>
+          <pose>-8.5 2 3.5 0 -1.570796 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.25 3 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Gray</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

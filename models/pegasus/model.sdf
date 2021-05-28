@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version='1.7'>
+  <model name='pegasus'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.004998 0.011186 -0.018715 0 -0 0</pose>
+        <mass>37.2557</mass>
+        <inertia>
+          <ixx>1.48096</ixx>
+          <ixy>0.00281766</ixy>
+          <ixz>0.00235324</ixz>
+          <iyy>2.3117</iyy>
+          <iyz>-0.0307391</iyz>
+          <izz>2.31426</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://pegasus/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__inner_link_collision_1'>
+        <pose>-0.01 -0.005052 -0.01 -1.5708 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://pegasus/meshes/inner_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__symbol_link_collision_2'>
+        <pose>0 -0.005052 -0.01 3.14159 -1.5617 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://pegasus/meshes/symbol_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://pegasus/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__inner_link_visual_1'>
+        <pose>-0.01 -0.005052 -0.01 -1.5708 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://pegasus/meshes/inner_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__symbol_link_visual_2'>
+        <pose>0 -0.005052 -0.01 3.14159 -1.5617 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://pegasus/meshes/symbol_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

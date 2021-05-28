@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.7">
+  <model name="wall">
+    <static>true</static>
+    <link name="base_link">
+      <collision name="wall_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 10 5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="wall_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 10 5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Steps</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

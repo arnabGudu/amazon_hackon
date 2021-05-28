@@ -31,7 +31,12 @@
             <uri>model://rack/meshes/base_link.STL</uri>
           </mesh>
         </geometry>
-        <material>Gazebo/Gray</material>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
   </model>
