@@ -1,0 +1,17 @@
+material yellow_stripes/Image
+{
+  	receive_shadows on
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+        		scale 1 0.1
+				texture yellow_stripes.png
+				filtering anistropic
+        		max_anisotropy 16
+			}
+		}
+	}
+}

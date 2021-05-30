@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="name" default="stair_climber"/>
+  <arg name="model" default="$(find amazon_hackon)/models/stair_climber/stair_climber.urdf"/>
+  <arg name="tf_prefix" default="$(optenv ROS_NAMESPACE)"/>
+  <arg name="world_frame" default="world"/>
+  <arg name="base_link_frame" default="$(arg tf_prefix)/base_link"/>
+  <arg name="world_name" default="$(find amazon_hackon)/worlds/demo.world"/>
+  <arg name="spawn_only" default="false"/>
+
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg model)' base_link_frame:=$(arg base_link_frame) world_frame:=$(arg world_frame)" />
+  <param name="tf_prefix" type="string" value="$(arg tf_prefix)"/>
+  <param name="world_frame" type="string" value="$(arg world_frame)" />
+  <param name="base_link_frame" type="string" value="$(arg base_link_frame)" />
+
+  <include file="$(find amazon_hackon)/launch/ros_control.launch"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" if="$(eval arg('spawn_only') == false)">
+    <arg name="world_name" value="$(arg world_name)" if="$(eval arg('world_name') != '')"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
+        args="-urdf
+          -param robot_description
+          -model $(arg name)
+          -x $(arg x)
+          -y $(arg y)
+          -z $(arg z)" />
+</launch>

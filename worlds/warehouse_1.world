@@ -6,27 +6,10 @@
     </include>
 
     <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <include>
       <uri>model://stairs</uri>
       <name>stairs</name>
       <pose>0 2.0 0 0 0 -1.570796</pose>
     </include>
-
-    <include>
-      <static>true</static>
-      <uri>model://aws_ground</uri>
-      <name>aws_ground</name>
-      <pose>0 -3 -0.111722 0 0 1.570796</pose>
-    </include>
-
-    <!-- <include>
-      <uri>model://stair_climber</uri>
-      <name>stair_climber</name>
-      <pose>0 0 0 0 0 0</pose>
-    </include> -->
 
     <!-- <population name="rack_population">
       <model name="racks">
@@ -35,35 +18,43 @@
           <pose>0 0 0 0 0 1.570796</pose>
         </include>
       </model>
-      <pose>4.096799 -4.056 0 0 0 0</pose>
-      <box>
-        <size>2.85 2.85 0.01</size>
-      </box>
-      <model_count>4</model_count>
+      <pose>0 -7 0 0 0 0</pose>
       <distribution>
-        <type>uniform</type>
-      </distribution>
-    </population>
-
-    <population name="rack_population_1">
-      <model name="racks_1">
-        <include>
-          <uri>model://rack</uri>
-          <pose>0 0 0 0 0 1.570796</pose>
-        </include>
-      </model>
-      <pose>-2.5 -4.056 0 0 0 0</pose>
-      <box>
-        <size>2.85 2.85 0.01</size>
-      </box>
-      <model_count>4</model_count>
-      <distribution>
-        <type>uniform</type>
+        <type>grid</type>
+        <rows>5</rows>
+        <cols>5</cols>
+        <step>3 1 0</step>
       </distribution>
     </population> -->
 
     <model name='warehouse'>
       <static>1</static>
+      <link name='ground_floor'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <collision name='ground_floor_collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name='ground_floor_visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://floor/materials/scripts</uri>
+              <uri>model://floor/materials/textures</uri>
+              <name>floor/Image</name>
+            </script>
+          </material>
+        </visual>
+      </link>
       <link name='top_floor'>
         <pose frame=''>0 6.5 2.55 0 -0 0</pose>
         <collision name='top_floor_collision'>

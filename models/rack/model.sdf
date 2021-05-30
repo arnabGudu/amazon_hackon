@@ -1,43 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sdf version='1.7'>
-  <model name='rack'>
-    <link name='base_link'>
-      <inertial>
-        <pose>-4e-06 1e-06 1.6034 0 -0 0</pose>
-        <mass>19.597</mass>
-        <inertia>
-          <ixx>7.2818</ixx>
-          <ixy>-5.5511e-17</ixy>
-          <ixz>1.0989e-17</ixz>
-          <iyy>6.6753</iyy>
-          <iyz>2.1487e-17</iyz>
-          <izz>1.1751</izz>
-        </inertia>
-      </inertial>
-      <collision name='base_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://rack/meshes/base_link.STL</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='base_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://rack/meshes/base_link.STL</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Blue</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
-      </visual>
-    </link>
+  <model name='rack_full'>
+    <static>false</static>
+    <self_collide>true</self_collide>
+    <allow_auto_disable>true</allow_auto_disable>
+
+    <model name='rack'>
+      <link name='base_link'>
+        <inertial>
+          <pose>-4e-06 1e-06 1.6034 0 -0 0</pose>
+          <mass>19.597</mass>
+          <inertia>
+            <ixx>7.2818</ixx>
+            <ixy>-5.5511e-17</ixy>
+            <ixz>1.0989e-17</ixz>
+            <iyy>6.6753</iyy>
+            <iyz>2.1487e-17</iyz>
+            <izz>1.1751</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rack/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rack/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_1_1</name>
+      <pose>0 -0.25 0.356799 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_1_2</name>
+      <pose>0 0 0.356799 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_1_3</name>
+      <pose>0 0.25 0.356799 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_2_1</name>
+      <pose>0 -0.25 0.661600 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_2_2</name>
+      <pose>0 0 0.661600 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_2_3</name>
+      <pose>0 0.25 0.661600 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_3_1</name>
+      <pose>0 -0.25 0.966400 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_3_2</name>
+      <pose>0 0 0.966400 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_3_3</name>
+      <pose>0 0.25 0.966400 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_4_1</name>
+      <pose>0 -0.25 1.271199 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_4_2</name>
+      <pose>0 0 1.271199 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_4_3</name>
+      <pose>0 0.25 1.271199 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_5_1</name>
+      <pose>0 -0.25 1.576000 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_5_2</name>
+      <pose>0 0 1.576000 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_5_3</name>
+      <pose>0 0.25 1.576000 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_6_1</name>
+      <pose>0 -0.25 1.880800 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_6_2</name>
+      <pose>0 0 1.880800 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_6_3</name>
+      <pose>0 0.25 1.880800 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_7_1</name>
+      <pose>0 -0.25 2.185598 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_7_2</name>
+      <pose>0 0 2.185598 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_7_3</name>
+      <pose>0 0.25 2.185598 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_8_1</name>
+      <pose>0 -0.25 2.490394 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_8_2</name>
+      <pose>0 0 2.490394 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_8_3</name>
+      <pose>0 0.25 2.490394 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_9_1</name>
+      <pose>0 -0.25 2.795200 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_9_2</name>
+      <pose>0 0 2.795200 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://small_box</uri>
+      <name>box_9_3</name>
+      <pose>0 0.25 2.795200 0 0 0</pose>
+    </include>
   </model>
 </sdf>

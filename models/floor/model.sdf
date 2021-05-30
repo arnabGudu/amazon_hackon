@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <model name='warehouse'>
+    <static>1</static>
+    <link name='ground_floor'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <collision name='ground_floor_collision'>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>20 20</size>
+          </plane>
+        </geometry>
+      </collision>
+      <visual name='ground_floor_visual'>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>20 20</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://floor/materials/scripts</uri>
+            <uri>model://floor/materials/textures</uri>
+            <name>floor/Image</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='top_floor'>
+      <pose frame=''>0 6.5 2.55 0 -0 0</pose>
+      <collision name='top_floor_collision'>
+        <geometry>
+          <box>
+            <size>20 7 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='top_floor_collision_1'>
+        <pose>-7.25 -4.5 0.001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>5.5 2 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='top_floor_visual'>
+        <geometry>
+          <box>
+            <size>20 7 0.3</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://floor/materials/scripts</uri>
+            <uri>model://floor/materials/textures</uri>
+            <name>floor/Image</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='top_floor_visual_1'>
+        <pose>-7.25 -4.5 0.001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>5.5 2 0.3</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://floor/materials/scripts</uri>
+            <uri>model://floor/materials/textures</uri>
+            <name>floor/Image</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='walls'>
+      <visual name='front_wall'>
+        <pose frame=''>-10 0 2.5 0 1.570796 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5 20</size>
+          </plane>
+        </geometry>
+      </visual>
+      <visual name='right_wall'>
+        <pose frame=''>0 10 2.5 0 1.570796 -1.570796</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5 20</size>
+          </plane>
+        </geometry>
+
+
+      </visual>
+    </link>
+    <link name='lines'>
+      <visual name='green_1'>
+        <pose frame=''>0 0 0.01 0 0 1.570796</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.1 20</size>
+          </plane>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
